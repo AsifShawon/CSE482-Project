@@ -1,0 +1,14 @@
+.nav-container {
+    padding: 20px;
+}
+
+.css_nav {
+    padding: 10px;
+    background: #ecb061;
+    border-radius: 10px;
+}
+
+.nav-container button {
+    background-color: #4774f1;
+    color: #e4e1dc;
+}
