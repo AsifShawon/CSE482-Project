@@ -51,3 +51,46 @@
     opacity: 0.5;
     text-decoration: none;
 }
+
+.carousel-container {
+    padding-bottom: 20px;
+}
+
+.card-img-top {
+    height: 300px; 
+    object-fit: cover; 
+  }
+  
+  @media (max-width: 767.98px) {
+    .col-lg-6 {
+      margin-bottom: 20px; 
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .col-lg-6 {
+      position: relative; 
+    }
+  
+    .carousel-container .col-lg-6:first-child::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 103%;
+      border-right: 1px solid #818181; 
+    }
+  }
+
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-header a {
+    text-decoration: none;
+}
+
+.carousel-item .card {
+    background: #c8c8dd;
+}
