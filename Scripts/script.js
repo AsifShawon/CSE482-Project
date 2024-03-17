@@ -16,6 +16,16 @@ const courses = [
 ]; // array of courses
 
 
+$(document).ready(function() {
+  var trainer = [];
+
+  $.getJSON("./components/trainer.json", function(data) {
+    trainer = data; 
+    console.log(trainer); 
+
+  });
+});
+
 
 // Toggle the sidebar on smaller screens
 const toggler = document.querySelector('.navbar-toggler');

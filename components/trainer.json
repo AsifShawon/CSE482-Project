@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "John Smith",
+      "expertise": "Cybersecurity",
+      "bio": "John is a seasoned cybersecurity professional with over 10 years of experience. He has a passion for educating others on how to stay safe online and has helped countless individuals and businesses improve their cybersecurity posture.",
+      "image": "trainer_1.jpg" 
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "expertise": "Self-Defense",
+      "bio": "Jane is a certified self-defense instructor with a background in martial arts. She empowers individuals, especially women, to learn practical self-defense techniques and build confidence.",
+      "image": "trainer_2.jpg"  
+    },
+    {
+      "id": 3,
+      "name": "David Lee",
+      "expertise": "First Aid & CPR",
+      "bio": "David is a certified paramedic with extensive experience in emergency medical care. He teaches valuable first aid and CPR skills that can help individuals save lives in critical situations.",
+      "image": "trainer_3.jpg"  
+    }
+  ]
+  
