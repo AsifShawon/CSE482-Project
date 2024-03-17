@@ -2,31 +2,7 @@
     background-color: #DDD0C8;
 }
 
-.nav-container {
-    padding: 20px;
-}
 
-.nav-container nav {
-    border-radius: 50px;
-}
-
-.nav-container .custom-nav {
-    background-color: #323232;
-}
-
-.logo {
-    width: 30px;
-}
-
-.css_nav {
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.nav-container button {
-    background-color: #4774f1;
-    color: #e4e1dc;
-}
 
 .hero-sec .btn-1 {
     color: #DDD0C8;
@@ -46,14 +22,10 @@
     width: 70px;
 }
 
-.nav-link-text {
-    color: #e4e1dc;
-    opacity: 0.5;
-    text-decoration: none;
-}
 
 .carousel-container {
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 .card-img-top {
@@ -94,3 +66,4 @@
 .carousel-item .card {
     background: #c8c8dd;
 }
+

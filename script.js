@@ -14,3 +14,24 @@ const courses = [
     images: [".jpg"],
   },
 ]; // array of courses
+
+
+
+// Toggle the sidebar on smaller screens
+const toggler = document.querySelector('.navbar-toggler');
+const sidebar = document.querySelector('.navbar-collapse');
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+
+toggler.addEventListener('click', () => {
+  sidebar.classList.toggle('show');
+  overlay.classList.toggle('show');
+  document.body.appendChild(overlay);
+});
+
+// Close the sidebar when clicking outside
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('show');
+  overlay.classList.remove('show');
+  overlay.remove();
+});

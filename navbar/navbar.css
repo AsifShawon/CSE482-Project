@@ -1,0 +1,131 @@
+.nav-container {
+    padding: 20px;
+}
+
+.nav-container nav {
+    border-radius: 50px;
+}
+
+.nav-container .fixed-top {
+    top: 10px;
+    right: 10px;
+    left:10px;
+}
+
+.nav-container .custom-nav {
+    background-color: #323232;
+}
+
+.logo {
+    width: 30px;
+}
+
+.css_nav {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nav-container button {
+    background-color: #4774f1;
+    color: #e4e1dc;
+}
+
+.nav-link-text {
+    color: #e4e1dc;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.nav-container button{
+    background: #323232;
+}
+
+/* Custom CSS for the sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #323232;
+    z-index: 1000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    transform: translateX(-250px);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar .navbar-nav {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  
+  .sidebar .navbar-nav .nav-link {
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .sidebar .dropdown-menu {
+    background-color: #292d32;
+  }
+  
+  .sidebar .dropdown-item {
+    color: #fff;
+  }
+  
+  /* Custom CSS for the overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: #323232;
+      z-index: 1000;
+      overflow-x: hidden;
+      transition: 0.5s;
+      transform: translateX(-250px);
+    }
+  
+    .navbar-collapse.show {
+      transform: translateX(0);
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      margin-top: 60px;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 10px 20px;
+      color: #fff;
+    }
+  
+    .dropdown-menu {
+      background-color: #292d32;
+    }
+  
+    .dropdown-item {
+      color: #fff;
+    }
+  }
