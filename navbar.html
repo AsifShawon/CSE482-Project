@@ -81,7 +81,6 @@
         }
       });
 
-      // Close the sidebar when clicking outside
       $(document).on("click", ".overlay", function () {
         sidebar.removeClass("show");
         overlay.removeClass("show");
@@ -89,16 +88,13 @@
       });
 
 
-      // Get the current URL path and split it by '/'
       var path = window.location.pathname.split("/").pop();
-      console.log(path);
+      // console.log(path);
 
-      // If path is empty, default to index.php
       if (path === "") {
         path = "index.php";
       }
 
-      // Add 'active' class to the corresponding nav link
       $(".navbar-nav a[href='./" + path + "']").addClass("active");
     });
   </script>
