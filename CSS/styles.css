@@ -1,0 +1,139 @@
+body {
+    margin-top: 80px;
+    background-color: #DDD0C8;
+}
+
+#cont{margin-bottom: 50px;}
+
+.choices {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+#ready {
+    padding-top: 20px;
+    color: rgb(39, 22, 22);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.choices:hover {
+    opacity: 50%;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+#choicelg:hover {
+    opacity: 50%;
+    text-decoration: underline;
+}
+
+#stay {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#terms:hover {
+    opacity: 50%;
+    text-decoration: underline;
+}
+
+#forgotpass:hover {
+    opacity: 50%;
+}
+
+label {
+    padding: 5px;
+}
+
+.box {
+    background-color: #c8d5dd;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid #323232;
+}
+
+.box2 {
+    background-color: #c8ddd0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid #323232;
+}
+
+.box3 {
+    background-color: #f0ebe8;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-right: 2px solid #323232;
+    border-bottom: 1px solid #323232;
+}
+
+.icons {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    margin: 15px;
+}
+
+.icon{
+    height:8vh;
+    width:5vw;
+}
+
+#google {
+    padding: 6px;
+}
+
+.bg {
+    background-image: url("Untitled_design-removebg-preview.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.courses{ display:inline-block;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px;
+}
+#course1{background-color: #f0ebe8;
+}
+
+#course2{background-color: #f0ebe8;}
+
+#course3{background-color: #f0ebe8;}
+
+.enroll{margin:0;}
+
+.CourseDet{text-align: center;}
+#vision{background-color: rgba(32, 32, 32,0.5);
+display: inline-block;
+padding: 20px;
+border-radius: 20px;
+font-weight: 500;
+color:white;
+font-size: 20px;}
+
+.courseimg{
+    height:25vh;
+    width:25vw;
+}
+
+table{border-collapse:separate;
+border-spacing: 0px 10px;}
+.corefet{display:inline-block;
+padding:5px;
+margin:10px 0;
+font-size: 20px;
+text-align: center;}
+.right{text-align: right;}
+
+.trfix{line-height: 20px;}
+.contfix{height: 100px;}
+.ct{heigh:50vh;}
+.Enroll{align-self: flex-end;}
