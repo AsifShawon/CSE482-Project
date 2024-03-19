@@ -1,6 +1,14 @@
 .nav-container {
   padding-bottom: 100px;
 }
+.custom-btn {
+  background-color: #f5f5f5;
+  color: #323232;
+  border-color: #f5f5f5; 
+}
+.nav-container .custom-btn:hover {
+  background-color: #dcdcdc; 
+}
 
 .nav-container nav {
   border-radius: 50px;
