@@ -1,0 +1,60 @@
+[
+    {
+      "id": "1",
+      "email": "john@gmail.com",
+      "experience": "5",
+      "gender": "male",
+      "name": "John Doe",
+      "location": "123 Main St, Springfield, IL 62701",
+      "phone": "217-555-1234",
+      "picture": "./components/trainer1.jpg",
+      "feedback": [
+        { "reviewer": "Alice", "comment": "John is a great trainer. Very knowledgeable and helpful." },
+        { "reviewer": "Bob", "comment": "Excellent training sessions with John. Highly recommended." },
+        { "reviewer": "Jane", "comment": "John's training methods are effective and engaging." }
+      ],
+      "courses": [
+        { "name": "Karate", "picture": "karate.jpg" },
+        { "name": "Judo", "picture": "judo.jpg" }
+      ]
+    },
+    {
+      "id": "2",
+      "email": "alice@gmail.com",
+      "experience": "7",
+      "gender": "female",
+      "name": "Alice Smith",
+      "location": "456 Elm St, Springfield, IL 62702",
+      "phone": "217-555-5678",
+      "picture": "./components/trainer2.jpg",
+      "feedback": [
+        { "reviewer": "John", "comment": "Alice is an exceptional trainer. Learned a lot from her sessions." },
+        { "reviewer": "Emma", "comment": "Very impressed with Alice's teaching style. Enjoyed every session." },
+        { "reviewer": "Mark", "comment": "Alice is very professional and delivers high-quality training." }
+      ],
+      "courses": [
+        { "name": "Taekwondo", "picture": "taekwondo.jpg" },
+        { "name": "Kickboxing", "picture": "kickboxing.jpg" }
+      ]
+    },
+    {
+      "id": "3",
+      "email": "bob@gmail.com",
+      "experience": "6",
+      "gender": "male",
+      "name": "Bob Johnson",
+      "location": "789 Oak St, Springfield, IL 62703",
+      "phone": "217-555-9876",
+      "picture": "./components/trainer3.jpg",
+      "feedback": [
+        { "reviewer": "Sarah", "comment": "Bob is an excellent trainer. His explanations are clear and concise." },
+        { "reviewer": "David", "comment": "Bob's training sessions are top-notch. Learned a lot from him." },
+        { "reviewer": "Linda", "comment": "Highly recommend Bob for his expertise and professionalism." }
+      ],
+      "courses": [
+        { "name": "Kung Fu", "picture": "kungfu.jpg" },
+        { "name": "Muay Thai", "picture": "muaythai.jpg" }
+      ]
+    }
+  ]
+  
