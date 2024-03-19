@@ -100,14 +100,13 @@ label {
     border-radius: 20px;
     padding: 20px;
     margin: 15px;
-    width:35vw;
 }
 #course1{background-color: #f0ebe8;
 }
 
-#course2{background-color: #c8ddd0;}
+#course2{background-color: #f0ebe8;}
 
-#course3{background-color: #c8d5dd;}
+#course3{background-color: #f0ebe8;}
 
 .enroll{margin:0;}
 
