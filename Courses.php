@@ -112,7 +112,7 @@
                 // Encode course data as JSON and pass it as a query parameter
                 var courseData = encodeURIComponent(JSON.stringify(courses[index]));
                 // Redirect to the course page with the course data
-                window.location.href = 'course.html?data=' + courseData;
+                window.location.href = 'CoursePage.php?data=' + courseData;
             });
     });
 </script>
