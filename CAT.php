@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS\styles.css">
-    <title>SignUp</title>
+    <title>Choose Appropiate Training</title>
 </head>
 
 <body>
     
     <div class="container justify-content-center d-flex flex-column" id="cont">
-        <?php include 'navbar.html'; ?>
+        <?php include 'navbar.php'; ?>
         <div>
             <h2 class="CourseDet"> Our Course Objectives </h2>
             <br>
@@ -33,19 +33,15 @@
         <div>
             <h2 class="CourseDet">Our Features</h2>
             <br><br>
-            <div class="d-flex justify-content-around">
-                <div><img src="components/medal-.png" alt="" class="icon"></div>
-                <div><img src="components/taekwondo.png" alt="" class="icon"></div>
-                <div><img src="components/communication.png" alt="" class="icon"></div>
-            </div>
-            <div class="d-flex justify-content-around">
-
-                <p class="col-4 corefet">Courses provided by 50+ certified expert instructors</p>
-
-                <p class="col-4 corefet">In person classes help learners gain hands on experience</p>
-
-
-                <p class="col-4 corefet">Amicable online community always ready to provide information and help.</p>
+            <div class="d-flex  flex-wrap flex-lg-nowrap justify-content-evenly">
+                <div class="d-flex flex-column align-items-center"><img src="components/medal-.png" alt="" class="icon"><br>
+                    <p class="corefet">Courses provided by 50+ certified expert instructors</p></div>
+                <div class="d-flex flex-column align-items-center"><img src="components/taekwondo.png" alt="" class="icon"><br>
+                    <p class="corefet">In person classes help learners gain hands on experience</p>
+                </div>
+                <div class="d-flex flex-column align-items-center "><img src="components/communication.png" alt="" class="icon"><br>         
+                    <p class="corefet">Online community always ready to provide information.</p>
+                </div>
             </div>
             <br>
             <br>
@@ -55,10 +51,10 @@
             <h2 class="CourseDet">Our Courses</h2>
             <br>
 
-            <div class="d-flex flex-lg">
+            <div class="d-flex flex-wrap flex-lg-nowrap">
                 <div class="courses" id="course1">
                     <table class="ct">
-                        <img src="components/mma.jpg" alt="Picture of MMA fighters" class="img-thumbnail courseimg">
+                        <img src="components/mma.jpg" class="img-fluid" alt="Picture of MMA fighters" class="img-thumbnail courseimg">
                         <tr class="trfix">
                             <th>Mixed Martial Arts</th>
                             <th class="right">BDT1000/= Monthly</th>
@@ -80,7 +76,7 @@
                 </div>
                 <div class="courses" id="course2">
                     <table class="ct">
-                        <img src="components/karate.avif" alt="Picture of a girl doing karate"
+                        <img src="components/karate.avif" class="img-fluid" alt="Picture of a girl doing karate"
                          class="img-thumbnail courseimg">
                         <tr class="trfix">
                             <th>Karate</th>
@@ -102,7 +98,7 @@
                 </div>
                 <div class="courses" id="course3">
                     <table class="ct">
-                        <img src="components/judo.avif" alt="Picture of children in a judo classroom"
+                        <img src="components/judo.avif" class="img-fluid" alt="Picture of children in a judo classroom"
                             class="img-thumbnail courseimg">
                         <tr class="trfix">
                             <th>Judo</th>

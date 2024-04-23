@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-<?php include 'navbar.html'; ?>
+<?php include 'navbar.php'; ?>
 <div class="container mt-2 mb-3">
     <div class="row mb-3">
         <div class="col">

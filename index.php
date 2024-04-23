@@ -12,7 +12,7 @@
 
 <body class="main-body">
   
- <?php include 'navbar.html'; ?>
+ <?php include 'navbar.php'; ?>
   <!-- Hero section start -->
   <div class="hero-sec">
     <!-- Hero 3 - Bootstrap Brain Component -->
@@ -69,7 +69,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="card">
-                <img src="./components/trainer_1.png" class="card-img-top" alt="...">
+                <img src="./components/trainer1.jpg" class="card-img-top " alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Trainer 1</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -80,7 +80,7 @@
             </div>
             <div class="carousel-item">
               <div class="card">
-                <img src="./components/trainer_2.png" class="card-img-top" alt="...">
+                <img src="./components/trainer2.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Trainer 2</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -91,7 +91,7 @@
             </div>
             <div class="carousel-item">
               <div class="card">
-                <img src="./components/trainer_3.png" class="card-img-top" alt="...">
+                <img src="./components/trainer3.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Trainer 3</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the

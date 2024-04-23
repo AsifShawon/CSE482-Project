@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php include 'navbar.html'; ?>
+    <?php include 'navbar.php'; ?>
     <div class="container mt-3">
         <h1>Create Course</h1>
         <div class="card shadow">

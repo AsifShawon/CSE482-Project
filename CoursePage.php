@@ -15,7 +15,7 @@
     }
 </style>
 <body>
-    <?php include 'navbar.html'; ?>
+    <?php include 'navbar.php'; ?>
     <!-- Container div with course details -->
     <div class="container mt-2 mb-3">
         <!-- Course details HTML -->
