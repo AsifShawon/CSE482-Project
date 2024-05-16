@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,7 @@
 </head>
 
 <body>
-    
+
     <div class="container justify-content-center d-flex flex-column" id="cont">
         <?php include 'navbar.php'; ?>
         <div>
@@ -34,12 +38,16 @@
             <h2 class="CourseDet">Our Features</h2>
             <br><br>
             <div class="d-flex  flex-wrap flex-lg-nowrap justify-content-evenly">
-                <div class="d-flex flex-column align-items-center"><img src="components/medal-.png" alt="" class="icon"><br>
-                    <p class="corefet">Courses provided by 50+ certified expert instructors</p></div>
-                <div class="d-flex flex-column align-items-center"><img src="components/taekwondo.png" alt="" class="icon"><br>
+                <div class="d-flex flex-column align-items-center"><img src="components/medal-.png" alt=""
+                        class="icon"><br>
+                    <p class="corefet">Courses provided by 50+ certified expert instructors</p>
+                </div>
+                <div class="d-flex flex-column align-items-center"><img src="components/taekwondo.png" alt=""
+                        class="icon"><br>
                     <p class="corefet">In person classes help learners gain hands on experience</p>
                 </div>
-                <div class="d-flex flex-column align-items-center "><img src="components/communication.png" alt="" class="icon"><br>         
+                <div class="d-flex flex-column align-items-center "><img src="components/communication.png" alt=""
+                        class="icon"><br>
                     <p class="corefet">Online community always ready to provide information.</p>
                 </div>
             </div>
@@ -50,78 +58,41 @@
 
             <h2 class="CourseDet">Our Courses</h2>
             <br>
-
             <div class="d-flex flex-wrap flex-lg-nowrap">
-                <div class="courses" id="course1">
-                    <table class="ct">
-                        <img src="components/mma.jpg" class="img-fluid" alt="Picture of MMA fighters" class="img-thumbnail courseimg">
-                        <tr class="trfix">
-                            <th>Mixed Martial Arts</th>
-                            <th class="right">BDT1000/= Monthly</th>
-                        </tr>
-                        <tr rowspan="8" class="contfix">
-                            <td colspan="2">Our Mixed Martial Arts Group Course is an amazing choice for your child
-                                as it engages
-                                your child with hand to hand combats, teaching them how to escape tricky situations
-                                easily when cornered along with spatial awareness and teach them free falling
-                                techniques
-                                to help them protect their vital organs.</td>
-                        </tr>
-                        <tr class="trfix">
-                            <td><em>Ages 13-18</em></td>
-                            <td align="right"><strong>24 Enrolled</strong></td>
-                        </tr>
-                    </table>
-                    <button button class="Enroll btn btn-outline-dark">Enroll Today!</button>
-                </div>
-                <div class="courses" id="course2">
-                    <table class="ct">
-                        <img src="components/karate.avif" class="img-fluid" alt="Picture of a girl doing karate"
-                         class="img-thumbnail courseimg">
-                        <tr class="trfix">
-                            <th>Karate</th>
-                            <th class="right"">BDT750/= Monthly</th>
-                        </tr>
-                        <tr rowspan="8" class="contfix">
-                            <td colspan="2">Our karate courses not only build an amazing foundation for the
-                                children's health and defending tactics but also builds character. The competitive
-                                environment in this course inspires the children to strive to always do better. Our
-                                Karate Masters are always there to help and encourage the little ones to achieve
-                                higher order belts and do their best!<br></td>
-                        </tr>
-                        <tr class="trfix">
-                            <td><em>Ages 4-18</em></td>
-                            <td align="right"><strong>35 Enrolled</strong></td>
-                        </tr>
-                    </table>
-                    <button button class="Enroll btn btn-outline-dark">Enroll Today!</button>
-                </div>
-                <div class="courses" id="course3">
-                    <table class="ct">
-                        <img src="components/judo.avif" class="img-fluid" alt="Picture of children in a judo classroom"
-                            class="img-thumbnail courseimg">
-                        <tr class="trfix">
-                            <th>Judo</th>
-                            <th class="right">BDT850/= Monthly</th>
-                        </tr>
-                        <tr rowspan="8" class="contfix">
-                            <td colspan="2">A martial art appropiate for people of all ages, judo is especially
-                                interesting for your children if they are interested in taking it up as an athletic pursuit. Not only
-                                does judo build agility and strength but also the self defense skills of the children, ot to mention awareness. Our experts
-                                trainers are their to teach them every small move every step of the way!<br></td>
-                        </tr>
-                        <tr class="trfix">
-                            <td><em>Ages 6-18</em></td>
-                            <td align="right"><strong>30 Enrolled</strong></td>
-                        </tr>
-                    </table>
-                    <button button class="Enroll btn btn-outline-dark">Enroll Today!</button>
-                </div>
+                <?php include 'connection.php';
+                $query = "SELECT * FROM course";
+                $result = mysqli_query($conn, $query);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='courses' id='course" . $row['courseID'] . "'>
+                        <table class='ct'>
+                            <img src='components/" . $row['image'] . "' class='img-fluid' alt='Picture of MMA fighters'
+                                class='img-thumbnail courseimg'>
+                            <tr class='trfix'>
+                                <th>" . $row['Course_name'] . "</th>
+                                <th class='right'>BDT" . $row['fees'] . "/= Monthly</th>
+                            </tr>
+                            <tr rowspan='8' class='contfix'>
+                                <td colspan='2'>" . $row['Course_description'] . "</td>
+                            </tr>
+                            <tr class='trfix'>
+                                <td><em>Ages " . $row['MinAge'] . "-" . $row['MaxAge'] . "</em></td>
+                                <td align='right'><strong>" . $row['Enrolled'] . " Enrolled</strong></td>
+                            </tr>
+                        </table>
+                        <button button class='Enroll btn btn-outline-dark'>Enroll Today!</button>
+                    </div>";
+                    }
+                }
+
+                ?>
             </div>
+
+
         </div>
     </div>
 
-    <?php include 'footer.html';?>
+    <?php include 'footer.html'; ?>
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
