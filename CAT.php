@@ -80,15 +80,13 @@ session_start();
                                 <td align='right'><strong>" . $row['Enrolled'] . " Enrolled</strong></td>
                             </tr>
                         </table>
-                        <button button class='Enroll btn btn-outline-dark'>Enroll Today!</button>
+                        <button class='Enroll btn btn-outline-dark' data-courseid='" . $row['courseID'] . "'>Enroll Today!</button>
                     </div>";
                     }
                 }
 
                 ?>
             </div>
-
-
         </div>
     </div>
 
@@ -99,6 +97,18 @@ session_start();
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./Scripts/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.Enroll').on('click', function () {
+                // Get the course ID from the data attribute
+                var courseID = $(this).data('courseid');
+
+                // Redirect to the checkout page with the course ID as a query parameter
+                window.location.href = 'checkout.php?courseID=' + courseID;
+            });
+        });
+    </script>
+
 </body>
 
 </html>
