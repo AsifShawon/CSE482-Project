@@ -29,12 +29,12 @@
               safety, one step at a time.
             </p>
             <div class="d-grid gap-2 d-sm-flex">
-              <button type="button" class="btn btn-dark bsb-btn-2xl rounded-pill btn-1">
+              <a href="./signup.php" type="button" class="btn btn-dark bsb-btn-2xl rounded-pill btn-1">
                 Become A Trainer
-              </button>
-              <button type="button" class="btn btn-outline-dark bsb-btn-2xl rounded-pill">
+              </a>
+              <a href="./CAT.php" type="button" class="btn btn-outline-dark bsb-btn-2xl rounded-pill">
                 Start Training
-              </button>
+              </a>
             </div>
           </div>
           <div class="col-12 col-lg-5 text-center">

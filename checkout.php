@@ -6,11 +6,16 @@ include 'connection.php';
 
 if (isset($_GET['courseID']) && isset($_SESSION['username'])) {
     $courseID = $_GET['courseID'];
-    $userID = $_SESSION['username'];
+    $user = $_SESSION['username'];
     
     // Fetch course details from the database
     $query = "SELECT * FROM course WHERE courseID = $courseID";
     $result = mysqli_query($conn, $query);
+
+    $query2 = "SELECT * FROM user WHERE email = '$user'";
+    $result2 = mysqli_query($conn, $query2);
+    $user = mysqli_fetch_assoc($result2);
+    $userID = $user['id'];
     
     if (mysqli_num_rows($result) > 0) {
         $course = mysqli_fetch_assoc($result);
@@ -41,7 +46,7 @@ try {
     $checkout_session = \Stripe\Checkout\Session::create([
         "payment_method_types" => ["card"],
         "mode" => "payment",
-        "success_url" => "http://localhost:3000/success.php?courseID=$courseID&userID=$userID",
+        "success_url" => "http://localhost/CSE482-Project/success.php?session_id={CHECKOUT_SESSION_ID}&courseID=$courseID&userID=$userID",
         "cancel_url" => "http://localhost/CSE482-Project/CAT.php",
         "line_items" => [
             [

@@ -33,26 +33,6 @@ if (session_status() == PHP_SESSION_NONE) {
             <li class="nav-item">
               <a class="nav-link mx-2" href="./trainerpage.php">Trainers</a>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a
-                class="nav-link mx-2 dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Company
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li><a class="dropdown-item" href="#">Blog</a></li>
-                <li><a class="dropdown-item" href="#">About Us</a></li>
-                <li><a class="dropdown-item" href="#">Contact us</a></li>
-              </ul>
-            </li> -->
             <?php
             include ('connection.php');
             if (!isset($_SESSION['username'])) {
@@ -65,7 +45,10 @@ if (session_status() == PHP_SESSION_NONE) {
               if ($role_id == 1) {
                 $url = "./admin.php";
               } else if ($role_id == 2) {
-                $url = "./trainer_dashboard.php";
+                $query = "SELECT * from user where email = '$username'";
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_assoc($result);
+                $url = "./trainer_dashboard.php?id=" . $row['id'];
               } else if ($role_id == 3) {
                 $url = "./guardian_dashboard.php";
               } else {

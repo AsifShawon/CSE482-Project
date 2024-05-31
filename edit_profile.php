@@ -9,17 +9,11 @@ if (!isset($_SESSION['username'])) {
 
 include('connection.php');
 
-$connection = mysqli_connect($host, $user, $pass, $db);
-
-if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 $username = $_SESSION['username'];
 
 // Fetch user profile information
-$query = "SELECT * FROM users WHERE email = '$username'";
-$user_result = mysqli_query($connection, $query);
+$query = "SELECT * FROM user WHERE email = '$username'";
+$user_result = mysqli_query($conn, $query);
 
 if ($user_result && mysqli_num_rows($user_result) > 0) {
     $user_row = mysqli_fetch_assoc($user_result);
@@ -40,19 +34,19 @@ if ($user_result && mysqli_num_rows($user_result) > 0) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get updated profile data from the form
-    $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
-    $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
-    $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $phone_num = mysqli_real_escape_string($connection, $_POST['phone_num']);
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phone_num = mysqli_real_escape_string($conn, $_POST['phone_num']);
 
     // Update the user's information in the database
     $update_query = "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', phone_num='$phone_num' WHERE id='$user_id'";
     
-    if (mysqli_query($connection, $update_query)) {
+    if (mysqli_query($conn, $update_query)) {
         echo "<script>alert('Profile updated successfully')</script>";
         echo "<script>window.open('./guardian_dashboard.php', '_self')</script>";
     } else {
-        echo "<script>alert('Error updating profile: " . mysqli_error($connection) . "')</script>";
+        echo "<script>alert('Error updating profile: " . mysqli_error($conn) . "')</script>";
     }
 }
 ?>

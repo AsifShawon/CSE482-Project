@@ -1,206 +1,163 @@
 body {
-  margin-top: 8vh;
-  background-color: #ddd0c8;
-  font-size: 16px;
+    margin-top: 8vh;
+    background-color: #f8f7f7;
+    font-size: 16px;
+   
 }
 
-.indentedchoice {
-  display: inline-block;
-  font-size: 3.25vh;
-  font-weight: 500;
-  margin-top: 1em;
+.indentedchoice{display: inline-block;
+    font-size: 3.25vh;
+    font-weight: 500;
+    margin-top: 1em;
+   
 }
 
-.invisible {
-  display: none;
+.invisible{display:none;
 }
-a {
-  text-decoration: none;
+a{text-decoration: none;}
+
+.signinbutton{
+    color: white;
 }
 
-.signinbutton {
-  color: white;
-}
-
-#cont {
-  margin-bottom: 50px;
-}
-
-.choices {
-  display: inline-block;
-  font-weight: 500;
-  margin: 1em;
-  opacity: 50%;
-  text-decoration: underline;
-  font-size: 1em;
+.choices { display: inline-block;
+    font-weight: 500;
+    margin: 1em;
+    opacity: 50%;
+    text-decoration: underline;
+    font-size: 1em;
 }
 
 #ready1 {
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: #eeeeee;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: #EEEEEE;
 }
 #ready2 {
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: maroon;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: maroon;
 }
 .choices:hover {
-  text-decoration: none;
-  display: inline-block;
-  font-size: 3.25vh;
-  font-weight: 500;
-  margin-top: 1em;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3.25vh;
+    font-weight: 500;
+    margin-top: 1em;
 }
 
 #choicelg:hover {
-  opacity: 50%;
-  text-decoration: underline;
+    opacity: 50%;
+    text-decoration: underline;
 }
 
 #terms:hover {
-  opacity: 50%;
-  text-decoration: underline;
+    opacity: 50%;
+    text-decoration: underline;
 }
 
 #forgotpass:hover {
-  opacity: 50%;
+    opacity: 50%;
 }
 
 label {
-  padding: 5px;
+    padding: 5px;
 }
 
-#left {
-  background-color: maroon;
-  color: white;
-  border-top-left-radius: 5%;
-  border-bottom-left-radius: 5%;
-  padding: 3%;
-  box-shadow: 3px 4px #888888;
+#left{background-color: maroon;
+    color:white;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;
+padding:3%;
+box-shadow: 3px 4px #888888;}
+
+#right{background-color: #f8f7f7;
+    color: maroon;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    padding:3%;
+    box-shadow: 3px 4px #888888;
 }
 
-#right {
-  background-color: #f8f7f7;
-  color: maroon;
-  border-top-right-radius: 5%;
-  border-bottom-right-radius: 5%;
-  padding: 3%;
-  box-shadow: 3px 4px #888888;
-}
-
-.join {
-  font-size: 1.1em;
-}
+.join{font-size: 1.1em;}
 
 .box {
-  background-color: #c8d5dd;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom: 1px solid #323232;
+    background-color: #c8d5dd;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid #323232;
+    
 }
 
 .box2 {
-  background-color: #c8ddd0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom: 1px solid #323232;
+    background-color: #c8ddd0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid #323232;
 }
 
 .box3 {
-  background-color: #f0ebe8;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-right: 2px solid #323232;
-  border-bottom: 1px solid #323232;
+    background-color: #f0ebe8;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-right: 2px solid #323232;
+    border-bottom: 1px solid #323232;
 }
 
 .icons {
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  padding: 5px;
-  margin: 15px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    margin: 15px;
 }
 
-.icon {
-  height: 8vh;
-  width: 5vw;
+.icon{
+    height:20vh;
+    width:auto;
 }
 
 #google {
-  padding: 6px;
+    padding: 6px;
 }
 
 .bg {
-  background-image: url("Untitled_design-removebg-preview.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
+    background-image: url("Untitled_design-removebg-preview.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
 }
 
-.bgcolor {
-  background-color: #f0ebe8;
+.bgcolor{ background-color: rgba(32, 32, 32, 0.8);
+    color:white;
 }
 
-#course1 {
-  background-color: #f0ebe8;
+.enroll{margin:0;}
+
+#vision{color: #111111;
+font-weight: 450;
+font-size: 1.25rem;}
+
+.courseimg{
+    height:900px;
 }
 
-#course2 {
-  background-color: #f0ebe8;
-}
+table{border-collapse:separate;
+border-spacing: 0px 10px;}
+.corefet{display:inline-block;
+padding:5px;
+margin:15px 0;
+font-size: 1.25rem;
+text-align: center;}
+.right{text-align: right;}
 
-#course3 {
-  background-color: #f0ebe8;
-}
+.trfix{line-height: 20px;}
+.contfix{height: 100px;}
+.ct{height:50vh;}
+.Enroll{align-self: flex-end;}
 
-.enroll {
-  margin: 0;
-}
+.headline{color:maroon; font-size:3em}
 
-.CourseDet {
-  text-align: center;
-}
-#vision {
-  background-color: rgba(32, 32, 32, 0.5);
-  display: inline-block;
-  padding: 20px;
-  border-radius: 20px;
-  font-weight: 500;
-  color: white;
-  font-size: 20px;
-}
-
-.courseimg {
-  height: 900px;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
-}
-.corefet {
-  display: inline-block;
-  padding: 5px;
-  margin: 10px 0;
-  font-size: 20px;
-  text-align: center;
-}
-.right {
-  text-align: right;
-}
-
-.trfix {
-  line-height: 20px;
-}
-.contfix {
-  height: 100px;
-}
-.ct {
-  height: 50vh;
-}
-.Enroll {
-  align-self: flex-end;
-}
+.features{background-color: maroon;
+color: white;}

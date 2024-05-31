@@ -30,8 +30,8 @@ $trainers_result = mysqli_query($conn, $trainers_query);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TrainerPage</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="CSS/styless.css" />
 </head>
 
@@ -60,7 +60,7 @@ $trainers_result = mysqli_query($conn, $trainers_query);
                     src="<?php echo !empty($trainer['image_link']) ? $trainer['image_link'] : 'components/default-trainer.jpg'; ?>"
                     alt="Trainer Image" width="150" height="150" />
                 <h2 class="names"><?php echo $trainer['first_name'] . ' ' . $trainer['last_name']; ?></h2>
-                <h6><?php echo !empty($trainer['quote']) ? $trainer['quote'] : 'Trainer'; ?></h6>
+                <h6><?php echo 'Trainer'; ?></h6>
                 <p class="bodytext"><?php echo $trainer['description']; ?></p>
                 <p>
                     <a class="btn btn-secondary" href="trainer_dashboard.php?id=<?php echo $trainer['id']; ?>"
@@ -135,15 +135,11 @@ $trainers_result = mysqli_query($conn, $trainers_query);
     </div>
     <?php include 'footer.html'; ?>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

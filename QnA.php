@@ -41,19 +41,6 @@
         </form>
         <hr>
 
-        <!-- <div class="navigation">
-        <a href="#" class="active">Recent Questions</a>
-        <a href="#">Most Responses</a>
-        <a href="#">Recently Answered</a>
-        <a href="#">No answers</a>
-    </div> -->
-        <!-- 
-    <div class="sidebar">
-        <h3>Stats</h3>
-        <p><i class="fas fa-question-circle"></i> Questions (20)</p>
-        <p><i class="fas fa-comment"></i> Answers (50)</p>
-    </div> -->
-
         <div class="ques container">
             <?php
             include ('connection.php');
@@ -96,7 +83,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="./Scripts/QnA.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
