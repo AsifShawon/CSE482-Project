@@ -1,3 +1,14 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['username'])){
+    if($_SESSION['$username'] !== 'admin@admin.com'){
+        header("Location: ./signup.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +18,27 @@
     <title>Create Course</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Css/Course_Create.css">
+    <style>
+        body {
+            background-color: #DDD0C8;
+            color: #323232;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: #323232;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,42 +47,70 @@
         <h1>Create Course</h1>
         <div class="card shadow">
             <div class="card-body">
-                <form id="course-form">
+                <form id="course-form" action="store_course.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title" required>
+                        <input type="text" class="form-control" id="title" name="title" required>
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">Image Upload</label>
-                        <input type="file" class="form-control" id="image" accept="image/*">
+                        <label for="image" class="form-label">Image Link</label>
+                        <input type="url" class="form-control" id="image" name="image" required>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3" required></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control" id="price" required>
+                        <input type="number" class="form-control" id="price" name="price" required>
                     </div>
                     <div class="mb-3">
-                        <label for="suitable-ages" class="form-label">Suitable Ages</label>
-                        <input type="text" class="form-control" id="suitable-ages" required>
+                        <label for="minAge" class="form-label">Minimum Age</label>
+                        <input type="number" class="form-control" id="minAge" name="minAge" required>
                     </div>
                     <div class="mb-3">
-                        <label for="trainers" class="form-label">Trainers</label>
-                        <div id="trainers-container">
-                            <div class="mb-2">
-                                <input type="text" class="form-control trainer-name mb-1" placeholder="Trainer Name"
-                                    required>
-                                <input type="url" class="form-control trainer-link mb-1" placeholder="Trainer Link"
-                                    required>
-                                <button type="button" class="btn btn-danger btn-sm delete-trainer">Delete</button>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-secondary btn-sm mt-2" id="add-trainer">Add
-                            Trainer</button>
+                        <label for="maxAge" class="form-label">Maximum Age</label>
+                        <input type="number" class="form-control" id="maxAge" name="maxAge" required>
                     </div>
-                    <button type="submit" class="btn btn-success">Create Course</button>
+                    <div class="mb-3">
+                        <label for="duration" class="form-label">Duration (in weeks)</label>
+                        <input type="number" class="form-control" id="duration" name="duration" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prerequisite" class="form-label">Pre-requisite</label>
+                        <textarea class="form-control" id="prerequisite" name="prerequisite" rows="2"
+                            required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teachers" class="form-label">Teachers/Instructors</label>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        
+                                        Select All
+                                    </th>
+                                    <th scope="col">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Fetch teachers/instructors from the database
+                                $query = "SELECT * FROM users WHERE role_id = 2"; // Assuming role_id 2 is for teachers/instructors
+                                $result = mysqli_query($conn, $query);
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo '<tr>';
+                                        echo '<td><input type="checkbox" class="form-check-input" name="teachers[]" value="' . $row['id'] . '"></td>';
+                                        echo '<td>' . $row['first_name'] . ' ' . $row['last_name'] . '</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Create Course</button>
                 </form>
             </div>
         </div>
@@ -63,62 +122,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Add trainer input field
-            $('#add-trainer').click(function () {
-                $('#trainers-container').append(`
-                    <div class="mb-2">
-                        <input type="text" class="form-control trainer-name" placeholder="Trainer Name" required>
-                        <input type="url" class="form-control trainer-link" placeholder="Trainer Link" required>
-                        <button type="button" class="btn btn-danger btn-sm delete-trainer">Delete</button>
-                    </div>
-                `);
-            });
-
-            // Delete trainer input field
-            $('#trainers-container').on('click', '.delete-trainer', function () {
-                $(this).closest('.mb-2').remove();
-            });
-
-            // Submit form
-            $('#course-form').submit(function (e) {
-                e.preventDefault();
-                var course = {
-                    title: $('#title').val(),
-                    image: $('#image').val(), // Not implemented for local file system
-                    description: $('#description').val(),
-                    price: $('#price').val(),
-                    suitableAges: $('#suitable-ages').val(),
-                    trainers: []
-                };
-
-                // Retrieve trainer data
-                $('.trainer-name').each(function (index) {
-                    var trainerName = $(this).val();
-                    var trainerLink = $('.trainer-link').eq(index).val();
-                    course.trainers.push({ name: trainerName, link: trainerLink });
-                });
-
-                // Store course data in local storage
-                var courses = JSON.parse(localStorage.getItem('courses')) || [];
-                courses.push(course);
-                localStorage.setItem('courses', JSON.stringify(courses));
-
-                // Clear form fields
-                $('#course-form')[0].reset();
-                $('#trainers-container').html(`
-                    <div class="mb-2">
-                        <input type="text" class="form-control trainer-name" placeholder="Trainer Name" required>
-                        <input type="url" class="form-control trainer-link" placeholder="Trainer Link" required>
-                        <button type="button" class="btn btn-danger btn-sm delete-trainer">Delete</button>
-                    </div>
-                `);
-
-                alert('Course created successfully!');
-            });
-        });
-    </script>
 </body>
 
 </html>

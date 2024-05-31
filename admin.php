@@ -3,8 +3,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['username'])){
-    if($_SESSION['$username'] != 'admin@admin.com'){
-        header("Location: ./login.php");
+    if($_SESSION['$username'] !== 'admin@admin.com'){
+        header("Location: ./signup.php");
     }
 }
 ?>

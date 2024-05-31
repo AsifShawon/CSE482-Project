@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if(!isset($_SESSION['username'])){
     if($_SESSION['$username'] != 'admin@admin.com'){
-        header("Location: ./login.php");
+        header("Location: ./signup.php");
     }
 }
 ?>

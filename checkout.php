@@ -4,8 +4,9 @@ require __DIR__ . '/vendor/autoload.php';
 session_start();
 include 'connection.php';
 
-if (isset($_GET['courseID'])) {
+if (isset($_GET['courseID']) && isset($_SESSION['userID'])) {
     $courseID = $_GET['courseID'];
+    $userID = $_SESSION['userID'];
     
     // Fetch course details from the database
     $query = "SELECT * FROM course WHERE courseID = $courseID";
@@ -19,7 +20,7 @@ if (isset($_GET['courseID'])) {
         exit;
     }
 } else {
-    echo "No course selected.";
+    echo "No course selected or user not logged in.";
     exit;
 }
 
@@ -38,7 +39,7 @@ try {
     $checkout_session = \Stripe\Checkout\Session::create([
         "payment_method_types" => ["card"],
         "mode" => "payment",
-        "success_url" => "http://localhost:3000/success.php",
+        "success_url" => "http://localhost:3000/success.php?courseID=$courseID&userID=$userID",
         "cancel_url" => "http://localhost/CSE482-Project/CAT.php",
         "line_items" => [
             [
@@ -60,3 +61,4 @@ try {
 } catch (Exception $e) {
     echo "Error creating checkout session: " . $e->getMessage();
 }
+?>

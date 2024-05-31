@@ -1,0 +1,98 @@
+body {
+  background-color: #f8f7f7;
+}
+.meet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  position: center;
+}
+
+.bodytext {
+  font-weight: 400;
+}
+.trainers {
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:2%;
+}
+.sec2{margin: 4%;}
+.names {
+  color: maroon;
+  margin-top: 0.5vh;
+}
+
+.quote {
+  font-size: 90%;
+  width: 100vw;
+  height: auto;
+  background-color: maroon;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+.quoted {
+  color: white;
+  font-weight: 500;
+  font-size: 2em;
+  padding: 7% 0% 7% 10%;
+  text-align: left;
+  margin-bottom: 5vh;
+}
+
+.qouter {
+  font-size: 80%;
+  color: #f7cece;
+}
+.counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  color: #6f8ba4;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.trainerimg {
+  margin: 5% 0;
+}
+
+.btn2 {
+  background-color: maroon;
+  border-color: maroon;
+}
+
+.btn1 {
+  color: maroon;
+  border-color: maroon;
+}
+
+.bio {
+  padding: 3%;
+}
+.tquote {
+  font-size: 1.75em;
+  font-weight: 500;
+  line-height:3rem;
+}
+
+.counter {
+  background-color: maroon;
+  color: white;
+}
+.courseheader{color:maroon;
+font-size: 2em;
+margin:1em 0.2em;}
+
+.price{color:maroon;
+  font-size: 2em;}
+
+.card-header{background-color: #323232;
+color:white;}
+
+.card{margin:2rem 0;}
+.card-title{color:maroon;}
+.cdet{margin: 1rem 0;
+font-weight: 450;}

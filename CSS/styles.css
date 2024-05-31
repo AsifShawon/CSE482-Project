@@ -1,39 +1,56 @@
 body {
-    margin-top: 80px;
-    background-color: #DDD0C8;
+    margin-top: 8vh;
+    background-color: #DDD0c8;
+    font-size: 16px;
+   
+}
+
+.indentedchoice{display: inline-block;
+    font-size: 3.25vh;
+    font-weight: 500;
+    margin-top: 1em;
+   
+}
+
+.invisible{display:none;
+}
+a{text-decoration: none;}
+
+.signinbutton{
+    color: white;
 }
 
 #cont{margin-bottom: 50px;}
 
-.choices {
-    display: inline-block;
-    font-size: 20px;
+.choices { display: inline-block;
     font-weight: 500;
-    padding-top: 20px;
-}
-
-#ready {
-    padding-top: 20px;
-    color: rgb(39, 22, 22);
-    font-weight: 500;
-    text-decoration: underline;
-    text-decoration-color: black;
-}
-
-.choices:hover {
+    margin: 1em;
     opacity: 50%;
     text-decoration: underline;
-    font-size: 16px;
+    font-size: 1em;
+}
+
+#ready1 {
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: #EEEEEE;
+}
+#ready2 {
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: maroon;
+}
+.choices:hover {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3.25vh;
+    font-weight: 500;
+    margin-top: 1em;
 }
 
 #choicelg:hover {
     opacity: 50%;
     text-decoration: underline;
-}
-
-#stay {
-    font-size: 14px;
-    margin-top: 2px;
 }
 
 #terms:hover {
@@ -49,11 +66,29 @@ label {
     padding: 5px;
 }
 
+#left{background-color: maroon;
+    color:white;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;
+padding:3%;
+box-shadow: 3px 4px #888888;}
+
+#right{background-color: #f8f7f7;
+    color: maroon;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    padding:3%;
+    box-shadow: 3px 4px #888888;
+}
+
+.join{font-size: 1.1em;}
+
 .box {
     background-color: #c8d5dd;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom: 1px solid #323232;
+    
 }
 
 .box2 {
@@ -135,5 +170,5 @@ text-align: center;}
 
 .trfix{line-height: 20px;}
 .contfix{height: 100px;}
-.ct{heigh:50vh;}
+.ct{height:50vh;}
 .Enroll{align-self: flex-end;}

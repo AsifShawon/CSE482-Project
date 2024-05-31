@@ -66,7 +66,7 @@ session_start();
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='courses' id='course" . $row['courseID'] . "'>
                         <table class='ct'>
-                            <img src='components/" . $row['image'] . "' class='img-fluid' alt='Picture of MMA fighters'
+                            <img src=". $row['image'] ." class='img-fluid' alt='Picture of MMA fighters'
                                 class='img-thumbnail courseimg'>
                             <tr class='trfix'>
                                 <th>" . $row['Course_name'] . "</th>

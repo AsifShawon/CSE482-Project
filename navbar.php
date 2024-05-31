@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <a class="nav-link mx-2" href="./CAT.php">Courses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="./trainers.php">Trainers</a>
+              <a class="nav-link mx-2" href="./trainerpage.php">Trainers</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <?php
             include ('connection.php');
             if (!isset($_SESSION['username'])) {
-              echo '<a class="btn btn-secondary" type="button" href="./login.php">Login</a>';
+              echo '<a class="btn btn-secondary" type="button" href="./signup.php">Login</a>';
             } else {
               $username = $_SESSION['username'];
               $role_id = $_SESSION['role_id'];

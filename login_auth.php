@@ -8,7 +8,7 @@ $pass = $_POST['pass'];
 //checking 
 if($username == '' || $pass == ''){
     echo "<script>alert('Please fill in both fields')</script>";
-    echo "<script>window.open('./login.php', '_self')</script>";
+    echo "<script>window.open('./signup.php', '_self')</script>";
     exit();
 }
 
@@ -29,12 +29,12 @@ if($row){
     }
     else{
         echo "<script>alert('Incorrect password');</script>";
-        echo "<script>window.open('./login.php', '_self')</script>";
+        echo "<script>window.open('./signup.php', '_self')</script>";
         exit();
     }
 }
 else {
     echo "<script>alert('No user found with that email');</script>";
-    echo "<script>window.open('./login.php', '_self')</script>";
+    echo "<script>window.open('./signup.php', '_self')</script>";
 }
 ?>
