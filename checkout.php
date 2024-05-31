@@ -4,9 +4,9 @@ require __DIR__ . '/vendor/autoload.php';
 session_start();
 include 'connection.php';
 
-if (isset($_GET['courseID']) && isset($_SESSION['userID'])) {
+if (isset($_GET['courseID']) && isset($_SESSION['username'])) {
     $courseID = $_GET['courseID'];
-    $userID = $_SESSION['userID'];
+    $userID = $_SESSION['username'];
     
     // Fetch course details from the database
     $query = "SELECT * FROM course WHERE courseID = $courseID";
@@ -20,6 +20,8 @@ if (isset($_GET['courseID']) && isset($_SESSION['userID'])) {
         exit;
     }
 } else {
+    echo $_GET['courseID'];
+    echo $_SESSION['userID'];
     echo "No course selected or user not logged in.";
     exit;
 }

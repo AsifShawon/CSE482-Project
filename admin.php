@@ -29,8 +29,8 @@ if(!isset($_SESSION['username'])){
             <h1 class="display-4 fw-bold">Admin Dashboard</h1>
             <div class="col-lg-6 mx-auto">
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Pending Courses</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Pending Teachers</button>
+                    <a href="./Course_create.php" type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Add Course</a>
+                    <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Pending Teachers</button> -->
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ if(!isset($_SESSION['username'])){
                 <div class="card-body">
                     <?php
                     include ('connection.php');
-                    $sql = "SELECT * FROM users WHERE role_id = 2";
+                    $sql = "SELECT * FROM user WHERE role_id = 2";
                     $result = mysqli_query($conn, $sql);
                     $trainers = mysqli_num_rows($result);
                     echo '<div class="card-header text-center h1">' . $trainers . '</div>';
@@ -68,7 +68,7 @@ if(!isset($_SESSION['username'])){
                 <div class="card-body">
                     <?php
                     include ('connection.php');
-                    $sql = "SELECT * FROM users WHERE role_id = 3";
+                    $sql = "SELECT * FROM user WHERE role_id = 3";
                     $result = mysqli_query($conn, $sql);
                     $guardians = mysqli_num_rows($result);
                     echo '<div class="card-header text-center h1">' . $guardians . '</div>';

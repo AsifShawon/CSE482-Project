@@ -12,7 +12,7 @@ if($username == '' || $pass == ''){
     exit();
 }
 
-$check_user = "SELECT * FROM users WHERE email = '$username'";
+$check_user = "SELECT * FROM user WHERE email = '$username'";
 $result = mysqli_query($conn, $check_user);
 $row = mysqli_fetch_assoc($result);
 

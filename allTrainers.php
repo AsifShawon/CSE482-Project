@@ -31,62 +31,121 @@ if (!isset($_SESSION['username'])) {
     </div>
 
     <div class="container">
+        <!-- Pending Trainers Table -->
+        <h2>Pending Trainers</h2>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th scope="col">#ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">E-mail</th>
-                    <!-- <th scope="col">Phone Number</th> -->
-                    <th scope="col">Remove</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 include ('connection.php');
 
-                $sql = "SELECT * FROM users WHERE role_id = 2";
+                $sql = "SELECT * FROM pending_trainer";
                 $result = mysqli_query($conn, $sql);
 
                 if (!$result) {
-                    // Query execution failed, handle the error
                     echo "Error: " . mysqli_error($conn);
                 } else {
-                    // Query executed successfully
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $trainer_id = $row['user_id'];
+                            $trainer_info_sql = "SELECT * FROM user WHERE id = $trainer_id";
+                            $trainer_info_result = mysqli_query($conn, $trainer_info_sql);
+                            $trainer_info = mysqli_fetch_assoc($trainer_info_result);
+
+                            echo "<tr>";
+                            echo "<td>" . $trainer_info['id'] . "</td>";
+                            echo "<td>" . $trainer_info['first_name'] . " " . $trainer_info['last_name'] . "</td>";
+                            echo "<td>" . $trainer_info['email'] . "</td>";
+                            echo "<td>
+                                    <button class='btn btn-success approve-btn' data-eid='{$trainer_info["id"]}'>Approve</button>
+                                    <button class='btn btn-danger delete-btn' data-eid='{$trainer_info["id"]}'>Delete</button>
+                                  </td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='4'>No pending trainers</td></tr>";
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+
+        <!-- Approved Trainers Table -->
+        <h2>Approved Trainers</h2>
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include ('connection.php');
+
+                $query = "SELECT u.id, u.first_name, u.last_name, u.email FROM user u INNER JOIN trainer_details td ON u.id = td.user_id";
+                $result = mysqli_query($conn, $query);
+
+                if (!$result) {
+                    echo "Error: " . mysqli_error($conn);
+                } else {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
                             echo "<td>" . $row['id'] . "</td>";
                             echo "<td>" . $row['first_name'] . " " . $row['last_name'] . "</td>";
                             echo "<td>" . $row['email'] . "</td>";
-                            // echo "<td>".$row['phone_num']."</td>";
-                            echo "<td><button class='btn btn-danger delete-btn' data-eid='{$row["id"]}'>Delete</button></td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "No records found";
+                        echo "<tr><td colspan='3'>No approved trainers</td></tr>";
                     }
                 }
-
                 ?>
             </tbody>
         </table>
-    </div>
 
+    </div>
 
     <?php include ('footer.html') ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.delete-btn').click(function () {
-                var rowId = $(this).data('eid');
+            // Approve button click handler
+            $('.approve-btn').click(function () {
+                var trainerId = $(this).data('eid');
                 $.ajax({
-                    url: 'deleteUser.php',
+                    url: 'approveTrainer.php',
                     method: 'POST',
-                    data: { id: rowId },
+                    data: { id: trainerId },
                     success: function (response) {
+                        // Reload the page after approval
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
 
+            // Delete button click handler
+            $('.delete-btn').click(function () {
+                var trainerId = $(this).data('eid');
+                $.ajax({
+                    url: 'deleteTrainer.php',
+                    method: 'POST',
+                    data: { id: trainerId },
+                    success: function (response) {
+                        // Reload the page after deletion
                         location.reload();
                     },
                     error: function (xhr, status, error) {

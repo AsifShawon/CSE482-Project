@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-include ('connection.php');
+include('connection.php');
 
 $connection = mysqli_connect($host, $user, $pass, $db);
 
@@ -24,6 +24,14 @@ $user_result = mysqli_query($connection, $query);
 if ($user_result && mysqli_num_rows($user_result) > 0) {
     $user_row = mysqli_fetch_assoc($user_result);
     $user_id = $user_row['id'];
+    $role = $user_row['role_id'];
+
+    // Check if the user is a guardian
+    if ($role != 3) { // Assuming role_id 3 is for guardians
+        echo "<script>alert('Access denied. Only guardians can edit this profile.')</script>";
+        echo "<script>window.open('./index.php', '_self')</script>";
+        exit();
+    }
 } else {
     echo "<script>alert('User not found')</script>";
     echo "<script>window.open('./signup.php', '_self')</script>";
@@ -36,18 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
     $email = mysqli_real_escape_string($connection, $_POST['email']);
     $phone_num = mysqli_real_escape_string($connection, $_POST['phone_num']);
-    $role = $user_row['role_id'];
 
     // Update the user's information in the database
     $update_query = "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', phone_num='$phone_num' WHERE id='$user_id'";
     
     if (mysqli_query($connection, $update_query)) {
         echo "<script>alert('Profile updated successfully')</script>";
-        if ($role == 2) { // role2 is trainer
-            echo "<script>window.open('./trainer_dashboard.php', '_self')</script>";
-        } else { // role3 is guardian
-            echo "<script>window.open('./guardian_dashboard.php', '_self')</script>";
-        }
+        echo "<script>window.open('./guardian_dashboard.php', '_self')</script>";
     } else {
         echo "<script>alert('Error updating profile: " . mysqli_error($connection) . "')</script>";
     }
@@ -85,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <?php include ('navbar.php') ?>
+    <?php include('navbar.php') ?>
 
     <div class="container text-center">
         <h2 class="shadow-lg p-3 mb-5 bg-body-tertiary rounded title">Edit Profile</h2>
@@ -117,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <br>
 
-    <?php include ('footer.html') ?>
+    <?php include('footer.html') ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

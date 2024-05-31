@@ -96,7 +96,7 @@ if(!isset($_SESSION['username'])){
                             <tbody>
                                 <?php
                                 // Fetch teachers/instructors from the database
-                                $query = "SELECT * FROM users WHERE role_id = 2"; // Assuming role_id 2 is for teachers/instructors
+                                $query = "SELECT * FROM user WHERE role_id = 2"; // Assuming role_id 2 is for teachers/instructors
                                 $result = mysqli_query($conn, $query);
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {

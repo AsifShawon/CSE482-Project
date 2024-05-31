@@ -72,7 +72,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 echo "<script>console.log('Error in role_id');</script>";
               }
               echo "<script>console.log('Username: $username');</script>";
-              $query = "SELECT first_name from users where email = '$username'";
+              $query = "SELECT first_name from user where email = '$username'";
               $result = mysqli_query($conn, $query);
               if ($result) {
                 $row = mysqli_fetch_assoc($result);

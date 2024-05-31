@@ -14,11 +14,14 @@ body {
   font-weight: 400;
 }
 .trainers {
-  margin-left:2%;
-  margin-right:2%;
-  margin-top:2%;
+  margin: 10% 2%;
 }
-.sec2{margin: 4%;}
+.trainerimg {
+  margin-bottom: 1%;
+}
+.sec2 {
+  margin: 4%;
+}
 .names {
   color: maroon;
   margin-top: 0.5vh;
@@ -75,24 +78,36 @@ body {
 .tquote {
   font-size: 1.75em;
   font-weight: 500;
-  line-height:3rem;
+  line-height: 3rem;
 }
 
 .counter {
   background-color: maroon;
   color: white;
 }
-.courseheader{color:maroon;
-font-size: 2em;
-margin:1em 0.2em;}
+.courseheader {
+  color: maroon;
+  font-size: 2em;
+  margin: 1em 0.2em;
+}
 
-.price{color:maroon;
-  font-size: 2em;}
+.price {
+  color: maroon;
+  font-size: 2em;
+}
 
-.card-header{background-color: #323232;
-color:white;}
+.card-header {
+  background-color: #323232;
+  color: white;
+}
 
-.card{margin:2rem 0;}
-.card-title{color:maroon;}
-.cdet{margin: 1rem 0;
-font-weight: 450;}
+.card {
+  margin: 2rem 0;
+}
+.card-title {
+  color: maroon;
+}
+.cdet {
+  margin: 1rem 0;
+  font-weight: 450;
+}

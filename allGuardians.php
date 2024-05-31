@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
             <?php
                 include('connection.php');
 
-                $sql = "SELECT * FROM users WHERE role_id = 3";
+                $sql = "SELECT * FROM user WHERE role_id = 3";
                 $result = mysqli_query($conn, $sql);
                 
                 if (!$result) {

@@ -8,9 +8,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="CSS\styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>Choose Appropiate Training</title>
 </head>
 
@@ -38,16 +37,13 @@ session_start();
             <h2 class="CourseDet">Our Features</h2>
             <br><br>
             <div class="d-flex  flex-wrap flex-lg-nowrap justify-content-evenly">
-                <div class="d-flex flex-column align-items-center"><img src="components/medal-.png" alt=""
-                        class="icon"><br>
+                <div class="d-flex flex-column align-items-center"><img src="components/medal-.png" alt="" class="icon"><br>
                     <p class="corefet">Courses provided by 50+ certified expert instructors</p>
                 </div>
-                <div class="d-flex flex-column align-items-center"><img src="components/taekwondo.png" alt=""
-                        class="icon"><br>
+                <div class="d-flex flex-column align-items-center"><img src="components/taekwondo.png" alt="" class="icon"><br>
                     <p class="corefet">In person classes help learners gain hands on experience</p>
                 </div>
-                <div class="d-flex flex-column align-items-center "><img src="components/communication.png" alt=""
-                        class="icon"><br>
+                <div class="d-flex flex-column align-items-center "><img src="components/communication.png" alt="" class="icon"><br>
                     <p class="corefet">Online community always ready to provide information.</p>
                 </div>
             </div>
@@ -58,30 +54,30 @@ session_start();
 
             <h2 class="CourseDet">Our Courses</h2>
             <br>
-            <div class="d-flex flex-wrap flex-lg-nowrap">
+            
                 <?php include 'connection.php';
                 $query = "SELECT * FROM course";
                 $result = mysqli_query($conn, $query);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='courses' id='course" . $row['courseID'] . "'>
-                        <table class='ct'>
-                            <img src=". $row['image'] ." class='img-fluid' alt='Picture of MMA fighters'
-                                class='img-thumbnail courseimg'>
-                            <tr class='trfix'>
-                                <th>" . $row['Course_name'] . "</th>
-                                <th class='right'>BDT" . $row['fees'] . "/= Monthly</th>
-                            </tr>
-                            <tr rowspan='8' class='contfix'>
-                                <td colspan='2'>" . $row['Course_description'] . "</td>
-                            </tr>
-                            <tr class='trfix'>
-                                <td><em>Ages " . $row['MinAge'] . "-" . $row['MaxAge'] . "</em></td>
-                                <td align='right'><strong>" . $row['Enrolled'] . " Enrolled</strong></td>
-                            </tr>
-                        </table>
-                        <button class='Enroll btn btn-outline-dark' data-courseid='" . $row['courseID'] . "'>Enroll Today!</button>
-                    </div>";
+                        echo "<div class='bgcolor container p-3 my-3 rounded'> <div class='row'>
+                        <div class='col-12' id='course" . $row['courseID'] . "'></div></div>
+                        <div class='row'>
+                            <img src=" . $row['image'] . " class='col-12 center mb-4 mx-auto' alt='Picture of MMA fighters'
+                               height='500' ></div>
+                            <div class='row'>
+                                <h5 class='col-6 '>" . $row['Course_name'] . "</h5>
+                                <h5 class='col-6 text-end'>BDT" . $row['fees'] . "/= Monthly</h5>
+                            </div>
+                            <div class='row'>
+                                <p class='col-12'>" . $row['Course_description'] . "</p></div>
+                            <div class='row d-flex justify-content-between'>
+                                <h6 class='col-6 my-2'><em>Ages " . $row['MinAge'] . "-" . $row['MaxAge'] . "</em></h6>
+                                <span class='col-6 text-end my-2'><strong>" . $row['Enrolled'] . " Enrolled</strong></span>
+                            </div>
+                            <div class='row mt-2'>
+                        <button class='col-4 Enroll btn btn-outline-dark mx-2' data-courseid='" . $row['courseID'] . "'>Enroll Today!</button>
+                    </div></div></div>";
                     }
                 }
 
@@ -92,14 +88,12 @@ session_start();
 
     <?php include 'footer.html'; ?>
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./Scripts/script.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.Enroll').on('click', function () {
+        $(document).ready(function() {
+            $('.Enroll').on('click', function() {
                 // Get the course ID from the data attribute
                 var courseID = $(this).data('courseid');
 
